@@ -1,0 +1,120 @@
+.header {
+    border-bottom: 1px solid $Coffee;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: $Coffee;
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        .logo {
+            display: flex;
+            align-items: center;
+            img {
+                height: 80px;
+                @include breakpoint-down(medium) {
+                    height: 50px;
+                }
+            }
+
+            .hamburger {
+                margin-left: 5px;
+
+                > span {
+                    display: none;
+                    width: 21px;
+                    height: 2px;
+                    background-color: $textColor;
+                    transition: all 300ms ease-in-out;
+                    &:not(:last-child) {
+                        margin-bottom: 5px;
+                    }
+                    @include breakpoint-down(small) {
+                        display: block;
+                    }
+                }
+                &.clicked {
+                    > span:first-child {
+                        transform: rotate(45deg);
+                        transform-origin: left top;
+                    }
+                    > span:nth-child(2) {
+                        opacity: 0;
+                    }
+                    > span:last-child {
+                        transform: rotate(315deg);
+                        transform-origin: left bottom;
+                    }
+                }
+            }
+        }
+
+        .menus {
+            a {
+                padding: 8px 15px;
+                border: 2px solid $Coffee;
+                transition: all 300ms ease-in-out;
+                &:first-child {
+                    border: 2px solid $lightCoffee;
+                    border-radius: 25px;
+                }
+                &:hover {
+                    border: 2px solid $lightCoffee;
+                    border-radius: 25px;
+                }
+            }
+            @include breakpoint-down(small) {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                background-color: $Coffee;
+                border: 2px solid $lightCoffee;
+                transition: all 300ms ease-in-out;
+                &.open {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    transition: all 300ms ease-in-out;
+                    a {
+                        border: 2px solid $Coffee;
+                        margin-top: 10px;
+                        &:first-child {
+                            border: 2px solid $lightCoffee;
+                            border-radius: 25px;
+                        }
+                        &:hover {
+                            border: 2px solid $lightCoffee;
+                            border-radius: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .contact {
+            .git_button {
+                margin-left: 36px;
+                margin-right: 5px;
+                padding: 10px 15px;
+                border: 2px solid $lightCoffee;
+                border-radius: 25px;
+                @include breakpoint-down(medium) {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    padding: 5px 10px;
+                    border: 2px solid $lightCoffee;
+                    border-radius: 25px;
+                }
+            }
+        }
+        @include breakpoint-down(medium) {
+            position: relative;
+            font-size: $font-sm;
+        }
+    }
+}

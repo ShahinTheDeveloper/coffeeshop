@@ -1,0 +1,72 @@
+.faq {
+    max-width: 1000px;
+    h1 {
+        text-align: center;
+        font-size: $font-xlg;
+        margin: 20px 0;
+        text-transform: uppercase;
+    }
+    .ques {
+        padding: 5px;
+        .item {
+            margin-bottom: 10px;
+            background-color: $Coffee;
+            border: 3px solid $lightCoffee;
+            border-radius: 7px;
+            &-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h2 {
+                    margin: 13px;
+                    text-transform: capitalize;
+                }
+                .toggle {
+                    height: 90px;
+                    padding: 45px 30px;
+                    background-color: $lighterCoffee;
+                    margin: -3px;
+                    border-radius: 0 7px 7px 0;
+                    span {
+                        height: 3px;
+                        width: 20px;
+                        display: block;
+                        background-color: $textColor;
+                        &:last-child {
+                            margin-top: -3px;
+                            transform: rotate(90deg);
+                            transition: all 200ms ease-in-out;
+                        }
+                    }
+                    @include breakpoint-down(small) {
+                        height: 125px;
+                        padding: 62px 30px;
+                    }
+                }
+            }
+            &-desc {
+                margin: 13px;
+                text-align: justify;
+                display: none;
+                opacity: 0;
+                transition: all 200ms ease-in-out;
+            }
+            &.toggled {
+                .toggle {
+                    margin: 0;
+                    padding: 27px;
+                    background-color: $Coffee;
+                    span {
+                        &:last-child {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+                .item-desc {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

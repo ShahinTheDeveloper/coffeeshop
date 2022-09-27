@@ -1,0 +1,28 @@
+.brands {
+    margin-bottom: 50px;
+    .title {
+        text-align: center;
+        font-size: $font-lg;
+        text-transform: uppercase;
+        margin: 36px auto;
+    }
+    .pictures {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        @include breakpoint-down(small) {
+            flex-direction: column;
+        }
+        .image {
+            height: 280px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: $darkCoffee;
+            border: 5px solid $Coffee;
+            border-radius: 7px;
+        }
+    }
+}

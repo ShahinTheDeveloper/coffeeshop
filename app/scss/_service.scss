@@ -1,0 +1,46 @@
+.service {
+    .title {
+        font-size: $font-lg;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .services {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .item {
+            width: 23%;
+            margin: 10px 5px;
+            text-align: center;
+            background-color: $Coffee;
+            border: 2px solid $lightCoffee;
+            border-radius: 7px;
+            padding: 5px;
+            img {
+                border-radius: 7px;
+            }
+            h2 {
+                text-transform: uppercase;
+                font-size: $font-lg;
+            }
+            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: $font-lg;
+                margin: 5px auto;
+                height: 50px;
+                width: 50px;
+                border: 2px solid $lighterCoffee;
+                border-radius: 50%;
+            }
+            @include breakpoint-down(medium) {
+                width: 48%;
+            }
+            @include breakpoint-down(small) {
+                width: 100%;
+            }
+        }
+    }
+}

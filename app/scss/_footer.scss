@@ -1,0 +1,130 @@
+.footer {
+    border-top: 2px solid $Coffee;
+    border-bottom: 2px solid $Coffee;
+    padding: 50px 0;
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 36px;
+        padding: 0 5px;
+        @include breakpoint-down(medium) {
+            flex-wrap: wrap;
+        }
+        @include breakpoint-down(small) {
+            flex-direction: column;
+            align-items: center;
+        }
+        // flex-wrap: wrap;
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include breakpoint-down(medium) {
+                align-items: flex-start;
+            }
+            @include breakpoint-down(medium) {
+                align-items: flex-start;
+            }
+            .image {
+                height: 80px;
+                width: 80px;
+            }
+            .social {
+                display: flex;
+                gap: 5px;
+                i {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 40px;
+                    width: 40px;
+                    border: 2px solid $textColor;
+                    border-radius: 50%;
+                }
+            }
+            @include breakpoint-down(medium) {
+                width: 45%;
+            }
+            @include breakpoint-down(small) {
+                width: 90%;
+            }
+        }
+        .quicklink {
+            h3 {
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            .linkbody {
+                display: flex;
+                flex-direction: column;
+            }
+            @include breakpoint-down(medium) {
+                width: 45%;
+            }
+            @include breakpoint-down(small) {
+                width: 90%;
+            }
+        }
+        .contact {
+            h3 {
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            .contactbody {
+                display: flex;
+                flex-direction: column;
+                a {
+                    text-transform: lowercase;
+                }
+            }
+            @include breakpoint-down(medium) {
+                width: 45%;
+            }
+            @include breakpoint-down(small) {
+                width: 90%;
+            }
+        }
+        .newsletter {
+            width: 25%;
+
+            .newstitle {
+                h3 {
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+                p {
+                    text-align: justify;
+                    margin-bottom: 10px;
+                }
+            }
+            .newsbody {
+                position: relative;
+                input {
+                    padding: 10px;
+                    width: 100%;
+                    background-color: transparent;
+                    border: 2px solid $textColor;
+                }
+                button {
+                    position: absolute;
+                    top: 13px;
+                    right: 10px;
+                    color: $textColor;
+                    background-color: transparent;
+                    border: 0;
+                    display: block;
+                }
+            }
+            @include breakpoint-down(medium) {
+                width: 45%;
+            }
+            @include breakpoint-down(small) {
+                width: 90%;
+            }
+        }
+    }
+}
+.copyright {
+    text-align: center;
+    padding: 10px;
+}
